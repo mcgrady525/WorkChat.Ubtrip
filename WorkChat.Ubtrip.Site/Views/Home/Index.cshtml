@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "优行商旅";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div style="text-align:center;">
+    <p>
+        点击登录按钮，将在默认浏览器中打开优行商旅
+    </p>
+    <p>
+        <input type="button" value="登录" id="btnLogin" name="btnLogin" onclick="login()" />
+        @*<a href="@ViewBag.OAuth2Url" target="_blank">登录</a>*@
+    </p>
+</div>
+
+@if (false)
+{
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+}
+
+@section foot{
+    <script type="text/javascript">
+        function login() {
+            var oAuth2Url= "@Html.Raw(ViewBag.OAuth2Url)";
+            window.open(oAuth2Url, "_blank");
+        }
+
+    </script>
+}
+
